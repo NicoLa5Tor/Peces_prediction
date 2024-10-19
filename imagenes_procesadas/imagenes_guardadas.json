@@ -1,0 +1,24 @@
+[
+    {
+        "name": "imagen_procesada_20241019_125926.png",
+        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_125926.png",
+        "filter": "green",
+        "kernels_applied": [
+            "Gaussian Blur (5x5)",
+            "Edge Enhancement (5x5)",
+            "Outline Filter"
+        ],
+        "tipo_pez": "Cirujano"
+    },
+    {
+        "name": "imagen_procesada_20241019_125943.png",
+        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_125943.png",
+        "filter": "green",
+        "kernels_applied": [
+            "Gaussian Blur (5x5)",
+            "Edge Enhancement (5x5)",
+            "Outline Filter"
+        ],
+        "tipo_pez": "Trucha Arcoíris"
+    }
+]

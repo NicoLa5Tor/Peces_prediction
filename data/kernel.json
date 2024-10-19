@@ -1,0 +1,595 @@
+{
+    "kernels": [
+        {
+            "name": "Gaussian Blur",
+            "size": "3x3",
+            "matrix": [
+                [1, 2, 1],
+                [2, 4, 2],
+                [1, 2, 1]
+            ],
+            "description": "Suaviza la imagen reduciendo el ruido y los detalles finos mediante una distribución gaussiana.",
+            "type": "Desenfoque"
+        },
+        {
+            "name": "Gaussian Blur (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1,  4,  6,  4, 1],
+                [4, 16, 24, 16, 4],
+                [6, 24, 36, 24, 6],
+                [4, 16, 24, 16, 4],
+                [1,  4,  6,  4, 1]
+            ],
+            "description": "Suaviza la imagen reduciendo el ruido y los detalles finos mediante una distribución gaussiana (5x5).",
+            "type": "Desenfoque"
+        },
+        {
+            "name": "Sobel Vertical",
+            "size": "3x3",
+            "matrix": [
+                [-1, 0, 1],
+                [-2, 0, 2],
+                [-1, 0, 1]
+            ],
+            "description": "Detecta bordes verticales en la imagen, resaltando las variaciones en la dirección horizontal.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Sobel Vertical (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [-1, -2,  0,  2, 1],
+                [-4, -8,  0,  8, 4],
+                [-6, -12, 0, 12, 6],
+                [-4, -8,  0,  8, 4],
+                [-1, -2,  0,  2, 1]
+            ],
+            "description": "Detecta bordes verticales en la imagen, resaltando las variaciones en la dirección horizontal (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Sobel Horizontal",
+            "size": "3x3",
+            "matrix": [
+                [-1, -2, -1],
+                [ 0,  0,  0],
+                [ 1,  2,  1]
+            ],
+            "description": "Detecta bordes horizontales en la imagen, resaltando las variaciones en la dirección vertical.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Sobel Horizontal (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [-1, -4, -6, -4, -1],
+                [-2, -8, -12, -8, -2],
+                [ 0,  0,  0,  0,  0],
+                [ 2,  8,  12,  8,  2],
+                [ 1,  4,   6,  4,  1]
+            ],
+            "description": "Detecta bordes horizontales en la imagen, resaltando las variaciones en la dirección vertical (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Laplacian",
+            "size": "3x3",
+            "matrix": [
+                [0, 1, 0],
+                [1, -4, 1],
+                [0, 1, 0]
+            ],
+            "description": "Realza las áreas de rápida variación en la intensidad, detectando bordes.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Laplacian (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [0,  0, -1,  0,  0],
+                [0, -1, -2, -1,  0],
+                [-1, -2, 16, -2, -1],
+                [0, -1, -2, -1,  0],
+                [0,  0, -1,  0,  0]
+            ],
+            "description": "Realza las áreas de rápida variación en la intensidad, detectando bordes (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Prewitt",
+            "size": "3x3",
+            "matrix": [
+                [-1, 0, 1],
+                [-1, 0, 1],
+                [-1, 0, 1]
+            ],
+            "description": "Detecta bordes horizontales y verticales en la imagen.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Prewitt (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [-1, -1, 0, 1, 1],
+                [-2, -2, 0, 2, 2],
+                [-3, -3, 0, 3, 3],
+                [-2, -2, 0, 2, 2],
+                [-1, -1, 0, 1, 1]
+            ],
+            "description": "Detecta bordes horizontales y verticales en la imagen (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Sharpen",
+            "size": "3x3",
+            "matrix": [
+                [0, -1, 0],
+                [-1, 5, -1],
+                [0, -1, 0]
+            ],
+            "description": "Mejora la nitidez de la imagen realzando los bordes y detalles.",
+            "type": "Realce"
+        },
+        {
+            "name": "Sharpen (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [0, -1, -1, -1, 0],
+                [-1,  2, -2,  2, -1],
+                [-1, -2, 12, -2, -1],
+                [-1,  2, -2,  2, -1],
+                [0, -1, -1, -1, 0]
+            ],
+            "description": "Mejora la nitidez de la imagen realzando los bordes y detalles (5x5).",
+            "type": "Realce"
+        },
+        {
+            "name": "Emboss",
+            "size": "3x3",
+            "matrix": [
+                [-2, -1, 0],
+                [-1, 1, 1],
+                [0, 1, 2]
+            ],
+            "description": "Da una apariencia en relieve a la imagen, resaltando las texturas.",
+            "type": "Realce"
+        },
+        {
+            "name": "Emboss (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [-4, -2, 0, 2, 4],
+                [-2, -1, 0, 1, 2],
+                [0, 0, 0, 0, 0],
+                [2, 1, 0, -1, -2],
+                [4, 2, 0, -2, -4]
+            ],
+            "description": "Da una apariencia en relieve a la imagen, resaltando las texturas (5x5).",
+            "type": "Realce"
+        },
+        {
+            "name": "Box Blur",
+            "size": "3x3",
+            "matrix": [
+                [1, 1, 1],
+                [1, 1, 1],
+                [1, 1, 1]
+            ],
+            "description": "Aplica un desenfoque uniforme a la imagen, reduciendo el ruido y suavizando los detalles.",
+            "type": "Desenfoque"
+        },
+        {
+            "name": "Box Blur (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1]
+            ],
+            "description": "Aplica un desenfoque uniforme a la imagen, reduciendo el ruido y suavizando los detalles (5x5).",
+            "type": "Desenfoque"
+        },
+        {
+            "name": "High-Pass Filter",
+            "size": "3x3",
+            "matrix": [
+                [-1, -1, -1],
+                [-1,  9, -1],
+                [-1, -1, -1]
+            ],
+            "description": "Realza los detalles finos y bordes, filtrando las componentes de baja frecuencia.",
+            "type": "Realce"
+        },
+        {
+            "name": "High-Pass Filter (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [-1, -1, -1, -1, -1],
+                [-1, -1, -1, -1, -1],
+                [-1, -1, 24, -1, -1],
+                [-1, -1, -1, -1, -1],
+                [-1, -1, -1, -1, -1]
+            ],
+            "description": "Realza los detalles finos y bordes, filtrando las componentes de baja frecuencia (5x5).",
+            "type": "Realce"
+        },
+        {
+            "name": "Edge Detection (Roberts Cross)",
+            "size": "3x3",
+            "matrix": [
+                [1, 0, 0],
+                [0, -1, 0],
+                [0, 0, 0]
+            ],
+            "description": "Detecta bordes diagonales en la imagen.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Edge Detection (Roberts Cross) (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1,  1, 0, -1, -1],
+                [1,  1, 0, -1, -1],
+                [0,  0, 0,  0,  0],
+                [-1, -1, 0,  1,  1],
+                [-1, -1, 0,  1,  1]
+            ],
+            "description": "Detecta bordes diagonales en la imagen utilizando el operador Roberts Cross (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Edge Detection (Laplacian of Gaussian)",
+            "size": "3x3",
+            "matrix": [
+                [0, 1, 0],
+                [1, -4, 1],
+                [0, 1, 0]
+            ],
+            "description": "Combina el desenfoque gaussiano con el operador Laplaciano para una detección de bordes más robusta.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Edge Detection (Laplacian of Gaussian) (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [0,  0, -1,  0,  0],
+                [0, -1, -2, -1,  0],
+                [-1, -2, 16, -2, -1],
+                [0, -1, -2, -1,  0],
+                [0,  0, -1,  0,  0]
+            ],
+            "description": "Combina el desenfoque gaussiano con el operador Laplaciano para una detección de bordes más robusta (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Average Blur",
+            "size": "3x3",
+            "matrix": [
+                [1.0, 1.0, 1.0],
+                [1.0, 1.0, 1.0],
+                [1.0, 1.0, 1.0]
+            ],
+            "description": "Desenfoca la imagen promediando los valores de los píxeles en la matriz del kernel.",
+            "type": "Desenfoque"
+        },
+        {
+            "name": "Average Blur (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1.0, 1.0, 1.0, 1.0, 1.0],
+                [1.0, 1.0, 1.0, 1.0, 1.0],
+                [1.0, 1.0, 1.0, 1.0, 1.0],
+                [1.0, 1.0, 1.0, 1.0, 1.0],
+                [1.0, 1.0, 1.0, 1.0, 1.0]
+            ],
+            "description": "Desenfoca la imagen promediando los valores de los píxeles en la matriz del kernel (5x5).",
+            "type": "Desenfoque"
+        },
+        {
+            "name": "Motion Blur",
+            "size": "3x3",
+            "matrix": [
+                [1, 0, 0],
+                [0, 1, 0],
+                [0, 0, 1]
+            ],
+            "description": "Crea un efecto de desenfoque en la dirección del movimiento simulado.",
+            "type": "Desenfoque"
+        },
+        {
+            "name": "Motion Blur (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1, 0, 0, 0, 0],
+                [0, 1, 0, 0, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 1, 0],
+                [0, 0, 0, 0, 1]
+            ],
+            "description": "Crea un efecto de desenfoque en la dirección del movimiento simulado (5x5).",
+            "type": "Desenfoque"
+        },
+        {
+            "name": "Diagonal Edge Detection",
+            "size": "3x3",
+            "matrix": [
+                [2, -1, -1],
+                [-1, 2, -1],
+                [-1, -1, 2]
+            ],
+            "description": "Detecta bordes diagonales en la imagen, resaltando las variaciones en ángulos de 45 y 135 grados.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Diagonal Edge Detection (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [3,  3,  0, -3, -3],
+                [3,  3,  0, -3, -3],
+                [0,  0,  0,  0,  0],
+                [-3, -3,  0,  3,  3],
+                [-3, -3,  0,  3,  3]
+            ],
+            "description": "Detecta bordes diagonales en la imagen, resaltando las variaciones en ángulos de 45 y 135 grados (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Edge Enhancement",
+            "size": "3x3",
+            "matrix": [
+                [0, -1, 0],
+                [-1, 5, -1],
+                [0, -1, 0]
+            ],
+            "description": "Realza los bordes de la imagen mejorando la nitidez sin introducir demasiados artefactos.",
+            "type": "Realce"
+        },
+        {
+            "name": "Edge Enhancement (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [0, -1, -1, -1,  0],
+                [-1,  2, -2,  2, -1],
+                [-1, -2, 12, -2, -1],
+                [-1,  2, -2,  2, -1],
+                [0, -1, -1, -1,  0]
+            ],
+            "description": "Realza los bordes de la imagen mejorando la nitidez sin introducir demasiados artefactos (5x5).",
+            "type": "Realce"
+        },
+        {
+            "name": "Outline Filter",
+            "size": "3x3",
+            "matrix": [
+                [-1, -1, -1],
+                [-1, 8, -1],
+                [-1, -1, -1]
+            ],
+            "description": "Resalta los contornos de los objetos en la imagen, creando un efecto de dibujo a lápiz.",
+            "type": "Realce"
+        },
+        {
+            "name": "Outline Filter (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [-1, -1, -1, -1, -1],
+                [-1, -1, -1, -1, -1],
+                [-1, -1, 24, -1, -1],
+                [-1, -1, -1, -1, -1],
+                [-1, -1, -1, -1, -1]
+            ],
+            "description": "Resalta los contornos de los objetos en la imagen, creando un efecto de dibujo a lápiz (5x5).",
+            "type": "Realce"
+        },
+        {
+            "name": "Ridge Detection",
+            "size": "3x3",
+            "matrix": [
+                [1, 1, 1],
+                [1, -8, 1],
+                [1, 1, 1]
+            ],
+            "description": "Detecta y resalta las crestas o líneas de alto contraste en la imagen.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Ridge Detection (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1],
+                [1, 1, -24, 1, 1],
+                [1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1]
+            ],
+            "description": "Detecta y resalta las crestas o líneas de alto contraste en la imagen (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Laplacian Sharpen",
+            "size": "3x3",
+            "matrix": [
+                [0, -1, 0],
+                [-1, 5, -1],
+                [0, -1, 0]
+            ],
+            "description": "Mejora la nitidez de la imagen utilizando el operador Laplaciano para realzar los bordes.",
+            "type": "Realce"
+        },
+        {
+            "name": "Laplacian Sharpen (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [0, -1, -1, -1, 0],
+                [-1,  2, -2,  2, -1],
+                [-1, -2, 12, -2, -1],
+                [-1,  2, -2,  2, -1],
+                [0, -1, -1, -1, 0]
+            ],
+            "description": "Mejora la nitidez de la imagen utilizando el operador Laplaciano para realzar los bordes (5x5).",
+            "type": "Realce"
+        },
+        {
+            "name": "Gaussian Sharpen",
+            "size": "3x3",
+            "matrix": [
+                [0, -1, 0],
+                [-1, 5, -1],
+                [0, -1, 0]
+            ],
+            "description": "Combina desenfoque gaussiano y realce para mejorar la nitidez de la imagen.",
+            "type": "Realce"
+        },
+        {
+            "name": "Gaussian Sharpen (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [0, -1, -1, -1, 0],
+                [-1,  2, -2,  2, -1],
+                [-1, -2, 12, -2, -1],
+                [-1,  2, -2,  2, -1],
+                [0, -1, -1, -1, 0]
+            ],
+            "description": "Combina desenfoque gaussiano y realce para mejorar la nitidez de la imagen (5x5).",
+            "type": "Realce"
+        },
+        {
+            "name": "High Boost Filter",
+            "size": "3x3",
+            "matrix": [
+                [1, -1, 1],
+                [-1, 5, -1],
+                [1, -1, 1]
+            ],
+            "description": "Aumenta los detalles finos y bordes, proporcionando una nitidez elevada sin sobrerealzar.",
+            "type": "Realce"
+        },
+        {
+            "name": "High Boost Filter (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1, -1, -1, -1, 1],
+                [-1,  2, -2,  2, -1],
+                [-1, -2, 12, -2, -1],
+                [-1,  2, -2,  2, -1],
+                [1, -1, -1, -1, 1]
+            ],
+            "description": "Aumenta los detalles finos y bordes, proporcionando una nitidez elevada sin sobrerealzar (5x5).",
+            "type": "Realce"
+        },
+        {
+            "name": "Edge Detection (Kirsch)",
+            "size": "3x3",
+            "matrix": [
+                [-3, -3, 5],
+                [-3,  0, 5],
+                [-3, -3, 5]
+            ],
+            "description": "Detecta bordes en la imagen utilizando la máscara de Kirsch, resaltando los bordes en diferentes direcciones.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Edge Detection (Kirsch) (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [-3, -3, 0, 3, 3],
+                [-3, -3, 0, 3, 3],
+                [0,  0,  0, 0, 0],
+                [3,  3, 0, -3, -3],
+                [3,  3, 0, -3, -3]
+            ],
+            "description": "Detecta bordes en la imagen utilizando la máscara de Kirsch, resaltando los bordes en diferentes direcciones (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Edge Detection (Robinson)",
+            "size": "3x3",
+            "matrix": [
+                [-1.0, 0.0, 1.0],
+                [-2.0, 0.0, 2.0],
+                [-1.0, 0.0, 1.0]
+            ],
+            "description": "Detecta bordes diagonales en la imagen utilizando la máscara de Robinson.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Edge Detection (Robinson) (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [-1, -2,  0,  2,  1],
+                [-2, -4,  0,  4,  2],
+                [0,  0,  0,  0,  0],
+                [2,  4,  0, -4, -2],
+                [1,  2,  0, -2, -1]
+            ],
+            "description": "Detecta bordes diagonales en la imagen utilizando la máscara de Robinson (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Ridge Detection",
+            "size": "3x3",
+            "matrix": [
+                [1, 1, 1],
+                [1, -8, 1],
+                [1, 1, 1]
+            ],
+            "description": "Detecta y resalta las crestas o líneas de alto contraste en la imagen.",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Ridge Detection (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1],
+                [1, 1, -24, 1, 1],
+                [1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1]
+            ],
+            "description": "Detecta y resalta las crestas o líneas de alto contraste en la imagen (5x5).",
+            "type": "Detección de Bordes"
+        },
+        {
+            "name": "Gabor Filter (3x3)",
+            "size": "3x3",
+            "matrix": [
+                [1, 0, -1],
+                [0, 0, 0],
+                [-1, 0, 1]
+            ],
+            "description": "Resalta patrones de orientación específica en la imagen, útil para la detección de texturas.",
+            "type": "Detección de Patrones"
+        },
+        {
+            "name": "Gabor Filter (5x5)",
+            "size": "5x5",
+            "matrix": [
+                [1, 1, 0, -1, -1],
+                [1, 2, 0, -2, -1],
+                [0, 0, 0, 0, 0],
+                [-1, -2, 0, 2, 1],
+                [-1, -1, 0, 1, 1]
+            ],
+            "description": "Resalta patrones de orientación específica en la imagen, útil para la detección de texturas (5x5).",
+            "type": "Detección de Patrones"
+        },
+        {
+            "name": "Gabor Filter (7x7)",
+            "size": "7x7",
+            "matrix": [
+                [1, 1, 1, 0, -1, -1, -1],
+                [1, 2, 2, 0, -2, -2, -1],
+                [1, 2, 3, 0, -3, -2, -1],
+                [0, 0, 0, 0, 0, 0, 0],
+                [-1, -2, -3, 0, 3, 2, 1],
+                [-1, -2, -2, 0, 2, 2, 1],
+                [-1, -1, -1, 0, 1, 1, 1]
+            ],
+            "description": "Resalta patrones de orientación específica y texturas más complejas en la imagen (7x7).",
+            "type": "Detección de Patrones"
+        }
+    ]
+}
