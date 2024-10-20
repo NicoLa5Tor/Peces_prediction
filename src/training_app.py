@@ -51,22 +51,41 @@ class TrainingApp(ttk.Frame):
         self.status_label = ttk.Label(self, text="Esperando para iniciar el entrenamiento.")
         self.status_label.pack(pady=5)
 
+        # PanedWindow para dividir la consola y la gráfica
+        paned = ttk.PanedWindow(self, orient=tk.VERTICAL)
+        paned.pack(fill=tk.BOTH, expand=True)
+
+        # Frame para la consola y la gráfica
+        frame_consola_grafica = ttk.Frame(paned)
+        paned.add(frame_consola_grafica, weight=1)
+
+        # Frame para la consola
+        frame_consola = ttk.Frame(frame_consola_grafica)
+        frame_consola.pack(fill=tk.BOTH, expand=True, side=tk.TOP)
+
         # Text widget para mostrar la salida del entrenamiento
-        self.text_output = tk.Text(self, height=10, wrap='word')
-        self.text_output.pack(pady=10, fill=tk.BOTH, expand=True)
+        self.text_output = tk.Text(frame_consola, height=10, wrap='word')
+        self.text_output.pack(fill=tk.BOTH, expand=True)
+        self.text_output.configure(font=("Courier", 10))
 
         # Frame para la gráfica
-        frame_grafica = ttk.LabelFrame(self, text="Gráfica de Error vs. Épocas")
-        frame_grafica.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+        frame_grafica = ttk.Frame(frame_consola_grafica)
+        frame_grafica.pack(fill=tk.BOTH, expand=True, side=tk.BOTTOM)
+
+        # Ajustar pesos para distribuir el espacio (40% consola, 60% gráfica)
+        frame_consola_grafica.rowconfigure(0, weight=2)  # Consola
+        frame_consola_grafica.rowconfigure(1, weight=3)  # Gráfica
+        frame_consola_grafica.columnconfigure(0, weight=1)
 
         # Crear la figura de matplotlib
-        self.fig, self.ax = plt.subplots(figsize=(6, 4))
+        self.fig, self.ax = plt.subplots(figsize=(8, 6))
         self.ax.set_title("Error vs. Épocas")
         self.ax.set_xlabel("Épocas")
         self.ax.set_ylabel("Error")
 
         # Embebemos la figura en Tkinter
         self.canvas_fig = FigureCanvasTkAgg(self.fig, master=frame_grafica)
+        self.canvas_fig.draw()
         self.canvas_fig.get_tk_widget().pack(fill=tk.BOTH, expand=True)
 
         # Iniciar el procesamiento de la cola

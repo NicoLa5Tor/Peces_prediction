@@ -1,23 +1,55 @@
 [
     {
-        "name": "imagen_procesada_20241019_125926.png",
-        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_125926.png",
+        "name": "imagen_procesada_20241019_194147.png",
+        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_194147.png",
         "filter": "green",
         "kernels_applied": [
-            "Gaussian Blur (5x5)",
-            "Edge Enhancement (5x5)",
-            "Outline Filter"
+            "Edge Enhancement (5x5)"
         ],
-        "tipo_pez": "Cirujano"
+        "tipo_pez": "Cirujnao"
     },
     {
-        "name": "imagen_procesada_20241019_125943.png",
-        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_125943.png",
+        "name": "imagen_procesada_20241019_194200.png",
+        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_194200.png",
         "filter": "green",
         "kernels_applied": [
-            "Gaussian Blur (5x5)",
-            "Edge Enhancement (5x5)",
-            "Outline Filter"
+            "Edge Enhancement (5x5)"
+        ],
+        "tipo_pez": "Cirujnao"
+    },
+    {
+        "name": "imagen_procesada_20241019_194227.png",
+        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_194227.png",
+        "filter": "green",
+        "kernels_applied": [
+            "Edge Enhancement (5x5)"
+        ],
+        "tipo_pez": "Cirujnao"
+    },
+    {
+        "name": "imagen_procesada_20241019_194239.png",
+        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_194239.png",
+        "filter": "green",
+        "kernels_applied": [
+            "Edge Enhancement (5x5)"
+        ],
+        "tipo_pez": "Trucha Arcoíris"
+    },
+    {
+        "name": "imagen_procesada_20241019_194249.png",
+        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_194249.png",
+        "filter": "green",
+        "kernels_applied": [
+            "Edge Enhancement (5x5)"
+        ],
+        "tipo_pez": "Trucha Arcoíris"
+    },
+    {
+        "name": "imagen_procesada_20241019_194305.png",
+        "path": "C:\\Users\\Nicolas Torres\\OneDrive\\Escritorio\\Peces\\imagenes_procesadas\\imagen_procesada_20241019_194305.png",
+        "filter": "green",
+        "kernels_applied": [
+            "Edge Enhancement (5x5)"
         ],
         "tipo_pez": "Trucha Arcoíris"
     }

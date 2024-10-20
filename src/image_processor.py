@@ -65,12 +65,12 @@ class TratamientoFrame(ttk.Frame):
         self.filtro_color = tk.StringVar(value='none')  # Valores posibles: 'none', 'grayscale', 'red', 'green', 'blue', 'white', 'black'
 
         # Variable para seleccionar el tipo de pez
-        self.tipo_pez = tk.StringVar(value='Ángel')  # Valores: 'Ángel', 'Trucha Arcoíris'
+        self.tipo_pez = tk.StringVar(value='Cirujano')  # Valores: 'Ángel', 'Trucha Arcoíris'
 
         # Instanciar DataLoader
         self.data_loader = DataLoader(
             imagenes_guardadas_json_ruta=os.path.join(self.carpeta_guardado, "imagenes_guardadas.json"),
-            image_size=(100, 100)
+            image_size=(64, 64)
         )
 
         # Cargar los kernels
@@ -243,7 +243,7 @@ class TratamientoFrame(ttk.Frame):
         frame_tipo_pez.pack(fill=tk.X, padx=5, pady=5)
 
         # Radiobuttons para tipo de pez
-        radiobtn_angel = ttk.Radiobutton(frame_tipo_pez, text="Ángel", variable=self.tipo_pez, value='Ángel')
+        radiobtn_angel = ttk.Radiobutton(frame_tipo_pez, text="Cirujano", variable=self.tipo_pez, value='Cirujnao')
         radiobtn_angel.pack(anchor='w', padx=5, pady=2)
 
         radiobtn_trucha = ttk.Radiobutton(frame_tipo_pez, text="Trucha Arcoíris", variable=self.tipo_pez, value='Trucha Arcoíris')
